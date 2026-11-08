@@ -3,6 +3,9 @@ services:
     build: .
     ports:
       - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-gateway}:${POSTGRES_PASSWORD:-gateway}@db:5432/${POSTGRES_DB:-gateway}
+      ADMIN_TOKEN: ${ADMIN_TOKEN:?.env에 ADMIN_TOKEN을 설정하세요}
     depends_on:
       db:
         condition: service_healthy

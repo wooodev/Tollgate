@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "LLM API 게이트웨이"
 requires-python = ">=3.12"
 dependencies = [
+    "alembic>=1.20.1",
+    "asyncpg>=0.32.0",
     "fastapi>=0.115",
+    "pydantic-settings>=2.16.2",
+    "sqlalchemy[asyncio]>=2.0",
     "uvicorn[standard]>=0.32",
 ]
 
